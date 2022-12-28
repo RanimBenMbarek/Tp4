@@ -1,0 +1,17 @@
+﻿@{
+    @model IEnumerable<String>
+
+}
+
+<div class="row">
+    @foreach(String course in Model)
+    {
+    <div class="card text-blue m-auto bg-{{tab[loop.index%2] }} mb-3 " style="width: 18rem;">
+            <div class="card-header"> Course : </div>
+            <div class="card-body">
+                <a href="Home/Course/@course"> <h5 class="card-title"> @course </h5> </a>
+            </div>
+        </div>
+    }
+
+</div>

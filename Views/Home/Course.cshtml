@@ -1,0 +1,49 @@
+﻿@model List<WebApplication3.Models.Student>
+
+@{
+
+    if(Model.Count != 0){
+        <div class="row">
+    @foreach (Student student in Model)
+    {
+        <div class="card text- m-auto bg-{{tab[loop.index%2] }} mb-3 " style="width: 18rem;">
+                <div class="card-header"> Etudiant : </div>
+                <div class="card-body">
+                    <h5 class="card-title"> id : @student.id </h5>
+                </div>
+                    <div class="card-body">
+                <h5 class="card-title"> FirstName : @student.first_name </h5>
+                    </div>
+            <div class="card-body">
+                <h5 class="card-title"> LastName : @student.last_name </h5>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"> Phone Number :@student.phone_number </h5>
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title"> University :@student.university </h5>
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title"> Timestamp :@student.timestamp </h5>
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title"> Course :@student.course </h5>
+            </div>
+
+            </div>
+    }
+
+</div>
+       
+    }
+    else{
+        <div class="alert alert-primary" role="alert">
+            There is no student studying  this course !
+        </div>
+    }
+    
+    
+}
